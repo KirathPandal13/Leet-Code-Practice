@@ -21,3 +21,18 @@ Constraints:
 strs[i] is made up of lowercase English letters.
 
 """
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = defaultdict(list) # mapping charCount to list of anagrams
+
+        for s in strs: #Iterate through each string in the input list
+            count = [0] * 26 # create a list with 26 zeros to count each letter from 'a' to 'z'
+            for c in s: #Iterate through each character in the string
+                count[ord(c) - ord("a")] += 1 #Increment the count for that character
+            
+            res[tuple(count)].append(s) # Comvert the count list to a tuple so it may be used as a dictionary key
+                                        # Append the current string to the list of anagrams that share the same key.
+        return res.values() # Return the values of the dictionary.
+
+#ord() is a built-in function that returns the ASCII value of a character.
