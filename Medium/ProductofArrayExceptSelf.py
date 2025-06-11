@@ -33,4 +33,4 @@ class Solution:
             res[i] *= postfix # Multiply the current value (res[i]) by the postfix value
             postfix *= nums[i] # Update postfix by multiplying nums[i] for the next index to the left
         
-        return res # Return the final result.
+        return res # Return the final result
