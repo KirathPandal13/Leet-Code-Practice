@@ -27,7 +27,7 @@ class Solution:
             while l < r and not self.alphaNum(s[l]): # Skip all non-alphanumeric characters from the left side.
                 l += 1 # Iterate (l) to the right
             while r > l and not self.alphaNum(s[r]): # Skip all non-alphanumeric characters from the right side.
-                r -= 1 # Iterate (r) to theleft
+                r -= 1 # Iterate (r) to the left
             if s[l].lower() != s[r].lower(): # Set (r) and (l) to lower case and if they dont match return false
                 return False # Return False if not a palindrome
             l, r = l + 1, r - 1 # Move both pointers inward to check the next pair of characters.
